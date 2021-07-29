@@ -23,6 +23,7 @@ requirements:
     - python
     - setuptools
     - numpy
+    - pytest-runner
   run:
     - python
     - ase
