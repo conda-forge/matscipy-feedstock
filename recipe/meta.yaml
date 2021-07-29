@@ -1,5 +1,5 @@
 {% set name = "matscipy" %}
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/matscipy-{{ version }}.tar.gz
-  sha256: ae98be6669981435070c492ddbf647710ce0268201b631ab10600d5cdefc7d5e
+  sha256: 7fdd0c2c9509d2be37f9fd2445a45dce1acb733719612d5d19b167ba405aaf7c
 
 build:
-  number: 3
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [win]
 
@@ -23,6 +23,7 @@ requirements:
     - python
     - setuptools
     - numpy
+    - pytest-runner
   run:
     - python
     - ase
@@ -55,8 +56,8 @@ about:
   license: LGPL-2.1-or-later
   license_family: GPL
   license_file: LICENSE
-  summary: 'Materials science with Python at the atomic-scale'
-  description: | 
+  summary: Materials science with Python at the atomic-scale
+  description: |
     This repository contains generic Python materials science tools built 
     around the Atomic Simulation Environment (ASE).
   doc_url: https://github.com/libAtoms/matscipy
