@@ -18,13 +18,13 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - meson-python
   host:
     - pip
     - python
     - setuptools
     - numpy
     - pytest-runner
+    - meson-python
   run:
     - python
     - ase
