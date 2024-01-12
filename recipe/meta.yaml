@@ -1,5 +1,5 @@
 {% set name = "matscipy" %}
-{% set version = "0.8.0" %}
+{% set version = "0.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/matscipy-{{ version }}.tar.gz
-  sha256: c6284e9d74cbcc30d705d9c6d02d84b7dbfa15fe07b9f7358ed8c2b525c7026f
+  sha256: 078dabf4574cd74c08789e956516dca94e3d49cd5f27f044418af36b7275a063
   patches:
     - version.patch
 
