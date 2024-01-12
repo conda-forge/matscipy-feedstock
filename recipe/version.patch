@@ -1,0 +1,23 @@
+From fe31751af6ebfc3db0d279d9d0a0ebc4257bcf08 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jan=20Jan=C3=9Fen?= <janssen@mpie.de>
+Date: Fri, 12 Jan 2024 16:33:11 +0100
+Subject: [PATCH] hardcoded version
+
+---
+ matscipy/{_version.py.in => _version.py} | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ rename matscipy/{_version.py.in => _version.py} (97%)
+
+diff --git a/matscipy/_version.py.in b/matscipy/_version.py
+similarity index 97%
+rename from matscipy/_version.py.in
+rename to matscipy/_version.py
+index ed0561c..85e8858 100644
+--- a/matscipy/_version.py.in
++++ b/matscipy/_version.py
+@@ -24,4 +24,4 @@
+ # directories (produced by setup.py build) will contain a much shorter file
+ # that just contains the computed version number.
+ 
+-__version__ = '@VERSION@'
++__version__ = '0.8.0'
