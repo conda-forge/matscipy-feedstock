@@ -1,5 +1,5 @@
 {% set name = "matscipy" %}
-{% set version = "0.7.0" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/matscipy-{{ version }}.tar.gz
-  sha256: 7fdd0c2c9509d2be37f9fd2445a45dce1acb733719612d5d19b167ba405aaf7c
+  sha256: c6284e9d74cbcc30d705d9c6d02d84b7dbfa15fe07b9f7358ed8c2b525c7026f
+  patches:
+    - version.patch
 
 build:
-  number: 3
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [win]
 
@@ -24,6 +26,7 @@ requirements:
     - setuptools
     - numpy
     - pytest-runner
+    - meson-python
   run:
     - python
     - ase
