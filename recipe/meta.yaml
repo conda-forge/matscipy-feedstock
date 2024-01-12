@@ -1,5 +1,5 @@
 {% set name = "matscipy" %}
-{% set version = "0.7.0" %}
+{% set version = "0.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/matscipy-{{ version }}.tar.gz
-  sha256: 7fdd0c2c9509d2be37f9fd2445a45dce1acb733719612d5d19b167ba405aaf7c
+  sha256: 078dabf4574cd74c08789e956516dca94e3d49cd5f27f044418af36b7275a063
+  patches:
+    - version.patch
 
 build:
-  number: 3
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [win]
 
@@ -19,33 +21,22 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - pip
     - python
-    - setuptools
+    - meson >=1.0.0
+    - meson-python >=0.13.0
+    - ninja
     - numpy
-    - pytest-runner
+    - pip
   run:
     - python
-    - ase
-    - numpy
-    - scipy
+    - numpy >=1.16.0
+    - scipy >=1.2.3
+    - ase >=3.16.0
+    - looseversion
 
 test:
   imports:
     - matscipy
-    - matscipy.io
-    - matscipy.tool
-    - matscipy.fracture_mechanics
-    - matscipy.contact_mechanics
-    - matscipy.electrochemistry
-    - matscipy.calculators
-    - matscipy.calculators.eam
-    - matscipy.calculators.pair_potential
-    - matscipy.calculators.polydisperse
-    - matscipy.calculators.mcfm
-    - matscipy.calculators.mcfm.mcfm_parallel
-    - matscipy.calculators.mcfm.neighbour_list_mcfm
-    - matscipy.calculators.mcfm.qm_cluster_tools
   commands:
     - pip check
   requires:
