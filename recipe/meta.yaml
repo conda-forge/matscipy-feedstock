@@ -21,34 +21,21 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
+    - python >=3.7.0
+    - meson >=1.0.0
+    - meson-python >=0.13.0
+    - ninja
+    - numpy
     - pip
-    - python
-    - setuptools
-    - numpy
-    - pytest-runner
-    - meson-python
   run:
-    - python
-    - ase
-    - numpy
-    - scipy
+    - python >=3.7.0
+    - numpy >=1.16.0
+    - scipy >=1.2.3
+    - ase >=3.16.0
 
 test:
   imports:
     - matscipy
-    - matscipy.io
-    - matscipy.tool
-    - matscipy.fracture_mechanics
-    - matscipy.contact_mechanics
-    - matscipy.electrochemistry
-    - matscipy.calculators
-    - matscipy.calculators.eam
-    - matscipy.calculators.pair_potential
-    - matscipy.calculators.polydisperse
-    - matscipy.calculators.mcfm
-    - matscipy.calculators.mcfm.mcfm_parallel
-    - matscipy.calculators.mcfm.neighbour_list_mcfm
-    - matscipy.calculators.mcfm.qm_cluster_tools
   commands:
     - pip check
   requires:
