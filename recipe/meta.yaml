@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/libAtoms/matscipy/archive/v{{ version }}.tar.gz
-  sha256: 7fdd0c2c9509d2be37f9fd2445a45dce1acb733719612d5d19b167ba405aaf7c
+  sha256: a53571a1e75b20a029cd90bf4a86322fb10cd2d023b8cfde2b54fd857cbe532f
 
 build:
   number: 0
