@@ -1,22 +1,23 @@
-From d026873f036cff2d05ca2bcc06f02f66705b15dc Mon Sep 17 00:00:00 2001
+From 327d3316593d3ed10d521893bfdad36e7ee777cf Mon Sep 17 00:00:00 2001
 From: Jan Janssen <jan-janssen@users.noreply.github.com>
-Date: Thu, 25 Jan 2024 06:49:25 +0100
-Subject: [PATCH] Update pyproject.toml
+Date: Thu, 25 Jan 2024 07:41:43 +0100
+Subject: [PATCH] Update meson.build
 
 ---
- pyproject.toml | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ matscipy/meson.build | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/pyproject.toml b/pyproject.toml
-index 6cf0ac57..2d429aca 100644
---- a/pyproject.toml
-+++ b/pyproject.toml
-@@ -16,7 +16,7 @@ classifiers = [
-     "Programming Language :: Python"
- ]
- requires-python = ">=3.7.0"
--dynamic = ["version"]
-+dynamic = ["1.0.0"]
- dependencies = [
-     "numpy>=1.16.0",
-     "scipy>=1.2.3",
+diff --git a/matscipy/meson.build b/matscipy/meson.build
+index db67658a..c619783a 100644
+--- a/matscipy/meson.build
++++ b/matscipy/meson.build
+@@ -1,7 +1,8 @@
+ # https://mesonbuild.com/Python-module.html
+ 
+ conf_data = configuration_data()
+-conf_data.set('VERSION', meson.project_version())
++cmd = run_command('sh', '-c', 'echo $PKG_VERSION')
++conf_data.set('VERSION', cmd.stdout().strip())
+ version_file = configure_file(
+     input: '_version.py.in',
+     output: '_version.py',
