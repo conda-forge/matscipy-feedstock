@@ -8,6 +8,8 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/matscipy-{{ version }}.tar.gz
   sha256: 50d896bf7527dc0acbba8ed548dbd247a77a129faf592a3e47a9fa128ca19483
+  patches:
+    - version.patch
 
 build:
   number: 0
