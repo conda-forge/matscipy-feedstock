@@ -6,13 +6,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/matscipy-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/matscipy-{{ version }}.tar.gz
   sha256: c8e4652860e749e17c1c9f58b22142b9634489727b6a69ed8b36acd59d020371
   patches:
     - version.patch  # [linux]
 
 build:
-  number: 2
+  number: 3
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [win]
 
