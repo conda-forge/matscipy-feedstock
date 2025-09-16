@@ -12,7 +12,7 @@ source:
     - version.patch  # [linux]
 
 build:
-  number: 3
+  number: 4
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [win]
 
