@@ -13,3 +13,5 @@ $PYTHON -m build -w -n -x \
     -Cbuilddir=builddir \
     -Csetup-args=${MESON_ARGS// / -Csetup-args=} \
     || (cat builddir/meson-logs/meson-log.txt && exit 1)
+
+$PYTHON -m pip install dist/matscipy*.whl
