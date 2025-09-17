@@ -8,4 +8,8 @@ mkdir builddir
 # to use host python; requires that [binaries] section is last in meson_cross_file
 echo "python = '${PREFIX}/bin/python'" >> ${CONDA_PREFIX}/meson_cross_file.txt
 
-$PYTHON -m pip install . -vv --no-deps --no-build-isolation
+# -wnx flags mean: --wheel --no-isolation --skip-dependency-check
+$PYTHON -m build -w -n -x \
+    -Cbuilddir=builddir \
+    -Csetup-args=${MESON_ARGS// / -Csetup-args=} \
+    || (cat builddir/meson-logs/meson-log.txt && exit 1)
