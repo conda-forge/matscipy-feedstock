@@ -23,13 +23,13 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
-    - ninja
+    - pip
     - meson >=1.0.0
     - meson-python >=0.13.0
+    - ninja
   host:
     - python
     - numpy
-    - pip
   run:
     - python
     - numpy >=1.16.0
