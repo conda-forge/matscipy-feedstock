@@ -12,20 +12,23 @@ source:
     - version.patch  # [linux]
 
 build:
-  number: 3
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 4
   skip: true  # [win]
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
+    - ninja
   host:
     - python
+    - python-build
     - meson >=1.0.0
     - meson-python >=0.13.0
-    - ninja
     - numpy
     - pip
   run:
