@@ -26,6 +26,7 @@ requirements:
     - ninja
   host:
     - python
+    - python-build
     - meson >=1.0.0
     - meson-python >=0.13.0
     - numpy
