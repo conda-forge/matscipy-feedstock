@@ -29,7 +29,6 @@ requirements:
     - python
     - numpy
     - pip
-    - meson >=1.0.0
     - meson-python >=0.13.0
     - ninja
   run:
