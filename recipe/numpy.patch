@@ -1,0 +1,22 @@
+From e20d986e2104bcebc0462f566c136b243f66f618 Mon Sep 17 00:00:00 2001
+From: Jan Janssen <janssen@mpie.de>
+Date: Thu, 9 Oct 2025 15:18:53 +0200
+Subject: [PATCH] remove numpy constraint
+
+---
+ pyproject.toml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/pyproject.toml b/pyproject.toml
+index 74f8741..e268abf 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -24,7 +24,7 @@ classifiers = [
+ requires-python = ">=3.8.0"
+ dynamic = ["version"]
+ dependencies = [
+-    "numpy>=1.16.0, <2.0.0",
++    "numpy>=1.16.0",
+     "scipy>=1.2.3",
+     "ase>=3.23.0",
+     "packaging"
