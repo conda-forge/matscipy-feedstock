@@ -10,7 +10,6 @@ source:
   sha256: 1d0691be7e541357ec7a3363e1ed2d7289e5ef8942fbc94064567124d1fb7444
   patches:
     - version.patch  # [linux]
-    - numpy.patch
 
 build:
   number: 0
