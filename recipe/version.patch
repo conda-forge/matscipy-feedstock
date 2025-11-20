@@ -4,8 +4,8 @@ Date: Thu, 25 Jan 2024 07:57:50 +0100
 Subject: [PATCH] Update meson.build
 
 ---
- meson.build | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ meson.build | 2 +-
+ 1 file changed, 1 insertions(+), 1 deletions(-)
 
 diff --git a/meson.build b/meson.build
 index 97371eef..e675beaf 100644
@@ -20,10 +20,3 @@ index 97371eef..e675beaf 100644
  )
  
  # https://mesonbuild.com/Python-module.html
-@@ -14,4 +14,4 @@ python = pymod.find_installation('python3',
- )
- 
- subdir('c')
--subdir('matscipy')
-\ No newline at end of file
-+subdir('matscipy')
