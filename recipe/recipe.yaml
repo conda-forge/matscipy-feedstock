@@ -1,0 +1,67 @@
+schema_version: 1
+
+context:
+  name: matscipy
+  version: "1.2.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/matscipy-${{ version }}.tar.gz
+  sha256: 1d0691be7e541357ec7a3363e1ed2d7289e5ef8942fbc94064567124d1fb7444
+  patches:
+    - if: linux
+      then: version.patch
+
+build:
+  number: 1
+  skip: win
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - if: build_platform != target_platform
+      then: numpy
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+    - ninja
+  host:
+    - python
+    - python-build
+    - meson >=1.0.0
+    - meson-python >=0.13.0
+    - numpy
+    - pip
+  run:
+    - python
+    - numpy >=1.16.0
+    - scipy >=1.2.3
+    - ase >=3.16.0
+    - looseversion
+
+tests:
+  - python:
+      imports:
+        - matscipy
+      pip_check: true
+
+about:
+  license: LGPL-2.1-or-later
+  license_file: LICENSE
+  summary: Materials science with Python at the atomic-scale
+  description: |
+    This repository contains generic Python materials science tools built
+    around the Atomic Simulation Environment (ASE).
+  homepage: https://github.com/libAtoms/matscipy
+  repository: https://github.com/libAtoms/matscipy
+  documentation: https://github.com/libAtoms/matscipy
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
